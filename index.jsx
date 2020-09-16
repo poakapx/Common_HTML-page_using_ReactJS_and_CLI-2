@@ -52,14 +52,37 @@ class Test2 extends React.Component
                 </table>;
     }
 }
+class Test4 extends React.Component
+{
+    render()
+    {
+        return  <table bordercolor="grey">
+                    <tbody>
+                        <tr>
+                            <td><img width="100%" align="left" src={this.props.img2} alt="Питомец"></img></td>
+                            <td><b>{this.props.opisanie}</b></td>
+                        </tr>
+                    </tbody>
+                </table>;
+    }
+}
 class Test3 extends React.Component
 {
     render()
     {
-        return  ;
+        return  <table border="5" bordercolor="grey"><tbody><tr><td><div>
+                    <h2>Время: {this.props.date.toLocaleTimeString()}.</h2>
+                </div></td></tr></tbody></table>;
     }
 }
-
+function tick()
+{
+    ReactDOM.render(
+    <Test3 date={new Date()} />,
+      document.getElementById('app3')
+      );
+}
+setInterval(tick, 1000);
 
 const styleObj1 =
 {
@@ -83,6 +106,11 @@ ReactDOM.render
 )
 ReactDOM.render
 (
-    <Test3></Test3>,
+    <Test4 img2="pat.jpg" opisanie="Мадагаскарский таракан является одним из самых крупных представителей тропических насекомых. Средние размеры самцов и самок мадагаскарских тараканов – 60 и 55 мм. Родина тараканов –  остров Мадагаскар – дала название этим экзотическим насекомым. Мадагаскарские тараканы – идеальные домашние питомцы для почитателей экзотики. Они обладают колоритной внешностью, достаточно просты в содержании, неприхотливы в быту, плодовиты и доступны для покупки во многих зоомагазинах нашей страны. Кроме того, мадагаскарские тараканы являются хорошим кормом для других животных. Именно поэтому всё больше эти экзотические насекомые пользуются популярностью."></Test4>,
+    document.getElementById('app4')
+)
+ReactDOM.render
+(
+    <Test3/>,
     document.getElementById('app3')
 )
